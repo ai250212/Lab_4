@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FSKTM IT Club</title>
-<style>
-
+    <title>FSKTM IT Club - Lab 4</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -16,28 +15,37 @@
         body {
             background-color: #f4f6f8;
             color: #333333;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
         }
 
         .container {
             display: flex;
             flex-direction: column;
             width: 100%;
+            max-width: 1000px;
             min-height: 600px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
-    
+
         .logo {
             min-height: 100px;
-            background: url("header.jpg") center / 100% 100% no-repeat;
+            background: linear-gradient(135deg, #0b2545 0%, #134074 50%, #48cae4 100%);
             color: #ffffff;
             padding: 20px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .navigation {
             min-height: 50px;
-            margin-top: 10px; 
+            margin-top: 10px;
             background-color: #1d3557;
             padding: 0 30px;
             display: flex;
@@ -46,12 +54,14 @@
 
         .content {
             min-height: 400px;
-            margin-top: 10px; 
+            margin-top: 10px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             background-color: #f8fafc;
-            padding: 20px;
+            padding: 25px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .footer {
@@ -66,19 +76,22 @@
         }
 
         .side-bar {
-            width: 20%;
-            min-height: 360px; 
-            background-color: #e2ece9; 
+            flex: 1;
+            min-width: 240px;
+            min-height: 360px;
+            background-color: #e2ece9;
             padding: 20px;
             border-radius: 6px;
         }
 
         .body-area {
-            width: 70%;
-            min-height: 360px; 
-            background-color: #ffffff; 
+            flex: 3;
+            min-width: 300px;
+            min-height: 360px;
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 6px;
+            border: 1px solid #e2e8f0;
         }
 
         .logo-text h1 {
@@ -111,6 +124,7 @@
             list-style: none;
             display: flex;
             gap: 25px;
+            flex-wrap: wrap;
         }
 
         .navigation a {
@@ -118,6 +132,11 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .navigation a:hover {
+            color: #48cae4;
         }
 
         .side-bar h3 {
@@ -147,6 +166,11 @@
         .side-bar a {
             color: #1d3557;
             font-weight: bold;
+            text-decoration: none;
+        }
+
+        .side-bar a:hover {
+            text-decoration: underline;
         }
 
         .side-bar .meetup-info {
@@ -158,6 +182,11 @@
             color: #1d3557;
             font-size: 13px;
             margin-bottom: 4px;
+        }
+
+        .side-bar .meetup-info p {
+            color: #475569;
+            margin-bottom: 2px;
         }
 
         .badge {
@@ -180,15 +209,15 @@
         .body-area h3 {
             color: #1e3a8a;
             font-size: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
             margin-bottom: 8px;
         }
 
         .body-area p {
             font-size: 13px;
             color: #475569;
-            line-height: 1.5;
-            margin-bottom: 10px;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
         .body-area ul {
@@ -197,17 +226,36 @@
             font-size: 13px;
             color: #475569;
             line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .body-area ul li {
+            margin-bottom: 6px;
         }
 
         .body-area a {
             color: #0284c7;
+            text-decoration: none;
+        }
+
+        .body-area a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            .side-bar, .body-area {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-
+        
         <div class="logo">
             <div class="logo-text">
                 <h1>FSKTM IT Club</h1>
@@ -228,7 +276,7 @@
         </div>
 
         <div class="content">
-
+            
             <div class="side-bar">
                 <h3>Club Corner</h3>
                 <p>Explore activities and opportunities available to our members.</p>
@@ -248,26 +296,21 @@
                 <span class="badge">WELCOME TO OUR COMMUNITY</span>
                 <h2>Discover Technology, Create Possibilities</h2>
                 <p>Welcome to Campus Tech Society! We are a student-led community that brings together people interested in web development, programming, design and emerging technology.</p>
-                 
-                <div class="section-divider"></div>
-
+                
                 <h3>About Our Club</h3>
                 <p>Our mission is to help students build practical skills through hands-on workshops, mini projects and knowledge-sharing sessions. Everyone is welcome, including beginners.</p>
 
-                <div class="section-divider"></div>
-                 <h3>Upcoming Activities</h3>
+                <h3>Upcoming Activities</h3>
                 <ul>
                     <li><strong>HTML & CSS Workshop:</strong> Create your first website.</li>
                     <li><strong>Hackathon Day:</strong> Build an idea with your team.</li>
                     <li><strong>Tech Talk:</strong> Learn from industry speakers.</li>
                 </ul>
 
-                <div class="section-divider"></div>
                 <h3>Learning Resources</h3>
                 <p>Start learning with free tutorials at <a href="https://www.w3schools.com" target="_blank">W3Schools</a>.</p>
             </div>
-        </div>
-            </div>
+
         </div>
 
         <div class="footer">
